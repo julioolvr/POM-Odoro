@@ -1,0 +1,14 @@
+/* http://coolors.co/app/db4a59-db3243-17bebb-2e282a-edb88b first two so far */
+
+body {
+  background-color: #DB4A59;
+}
+
+.tomato {
+  background-color: #db3243;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
