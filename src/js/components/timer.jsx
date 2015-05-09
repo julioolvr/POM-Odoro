@@ -8,13 +8,13 @@ export default React.createClass({
     console.log('starting pomodoro!');
   },
   onPomodoroLengthChange(event) {
-    this.props.onPomodoroLengthChange(Number(event.target.value));
+    this.props.onPomodoroLengthChange(Number(event.target.textContent));
   },
   render() {
     return (
       <div>
         <p>
-          Start a <input type="text" defaultValue={this.props.pomodoroLength} onChange={this.onPomodoroLengthChange}/> minutes pomodoro.
+          Start a <span contentEditable onInput={this.onPomodoroLengthChange}>{this.props.pomodoroLength}</span> minutes pomodoro.
         </p>
         <button onClick={this.startPomodoro}>Start</button>
       </div>
