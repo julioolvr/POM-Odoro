@@ -13,7 +13,7 @@
     "gulp-webpack": "^1.1.2",
     "gulp-webserver": "^0.9.0",
     "immutable": "^3.6.2",
-    "react": "^0.12.2",
+    "react": "^0.13.0",
     "webpack": "^1.5.3"
   },
   "scripts": {

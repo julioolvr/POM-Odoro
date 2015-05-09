@@ -1,6 +1,6 @@
 'use strict';
 
 import React from 'react';
-import Timer from './components/timer.jsx';
+import App from './components/app.jsx';
 
-React.render(<Timer/>, document.getElementById('app'));
+React.render(<App/>, document.getElementById('app'));
