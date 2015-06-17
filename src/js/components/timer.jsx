@@ -18,7 +18,8 @@ export default class extends React.Component {
         <p>
           Start a <span contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes pomodoro.
         </p>
-        <button onClick={() => this.startPomodoro()}>Start</button>
+        <button onClick={this.props.onPomodoroStart}>Start</button>
+        <button onClick={this.props.onPomodoroStop}>Stop</button>
       </div>
     );
   }
