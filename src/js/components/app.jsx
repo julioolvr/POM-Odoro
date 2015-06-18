@@ -31,7 +31,10 @@ export default class extends React.Component {
   stopTimer() {
     clearInterval(this.state.data.get('timer'));
     this.setState(prev => ({
-      data: prev.data.delete('timer').delete('startedAt')
+      data: prev.data
+        .delete('timer')
+        .delete('startedAt')
+        .set('secondsElapsed', 0)
     }));
   }
 
