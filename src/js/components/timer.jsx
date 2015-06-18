@@ -4,10 +4,6 @@ import React from 'react';
 import Immutable from 'immutable';
 
 export default class extends React.Component {
-  startPomodoro() {
-    console.log(`starting pomodoro of ${this.props.pomodoroLength} minutes!`);
-  }
-
   onPomodoroLengthChange(event) {
     this.props.onPomodoroLengthChange(Number(event.target.textContent));
   }
