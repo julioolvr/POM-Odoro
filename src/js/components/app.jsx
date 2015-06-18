@@ -37,9 +37,14 @@ export default class extends React.Component {
 
   tick() {
     var secondsElapsed = Math.round((Date.now() - this.state.data.get('startedAt')) / 1000);
-    this.setState(prev => ({
-      data: prev.data.set('secondsElapsed', secondsElapsed)
-    }));
+
+    if (secondsElapsed / 60 < this.state.data.get('pomodoroLength')) {
+      this.setState(prev => ({
+        data: prev.data.set('secondsElapsed', secondsElapsed)
+      }));
+    } else {
+      this.stopTimer();
+    }
   }
 
   render() {
