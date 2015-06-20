@@ -10,8 +10,9 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.jsx$/,
-      loader: 'babel'
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loaders: ['react-hot', 'babel']
     }, {
       test: [/\.html$/, /\.css$/],
       loader: 'file?name=[path][name].[ext]&context=src'
