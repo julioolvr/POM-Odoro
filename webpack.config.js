@@ -1,9 +1,5 @@
 module.exports = {
-  entry: {
-    js: './src/js/index.jsx',
-    css: './src/css/app.css',
-    html: './src/index.html'
-  },
+  entry: './src/js/index.jsx',
   output: {
     path: './build/',
     filename: 'js/bundle.js'
@@ -14,7 +10,10 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['react-hot', 'babel']
     }, {
-      test: [/\.html$/, /\.css$/],
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }, {
+      test: /\.html$/,
       loader: 'file?name=[path][name].[ext]&context=src'
     }]
   },
