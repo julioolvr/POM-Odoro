@@ -15,7 +15,7 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline",
+    "start": "webpack-dev-server --hot --inline --content-base src/",
     "clean": "rm -rf build/",
     "prebuild": "npm run clean",
     "build": "webpack",
