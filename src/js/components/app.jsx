@@ -13,7 +13,7 @@ export default class extends React.Component {
 
   onPomodoroLengthChange(newLength) {
     this.setState(prev => ({
-      data: prev.data.set('pomodoroLength', newLength)
+      data: prev.data.set('pomodoroLength', Number(newLength))
     }));
   }
 

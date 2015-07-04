@@ -15,8 +15,9 @@ class Timer extends React.Component {
     return (
       <div>
         <p>
-          Start a <input maxLength="2" autoFocus ref="lengthInput" onInput={(e) => this.onPomodoroLengthChange(e)} value={this.props.pomodoroLength}></input> minutes
-          pomodoro.
+          Start a&nbsp;
+          <input maxLength="2" autoFocus ref="lengthInput" onInput={(e) => this.onPomodoroLengthChange(e)} value={this.props.pomodoroLength}></input>
+          &nbsp;{this.props.pomodoroLength !== 1 ? 'minutes' : 'minute'} pomodoro.
         </p>
         <a className="btn" onClick={this.props.onPomodoroStart}>Start</a>
         <a className="btn" onClick={this.props.onPomodoroStop}>Stop</a>
