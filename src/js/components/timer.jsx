@@ -16,11 +16,12 @@ class Timer extends React.Component {
       <div>
         <p>
           Start a&nbsp;
-          <input maxLength="2" autoFocus ref="lengthInput" onInput={(e) => this.onPomodoroLengthChange(e)} value={this.props.pomodoroLength}></input>
+          <input maxLength="2" autoFocus ref="lengthInput" disabled={this.props.started}
+                 onInput={(e) => this.onPomodoroLengthChange(e)} value={this.props.pomodoroLength}></input>
           &nbsp;{this.props.pomodoroLength !== 1 ? 'minutes' : 'minute'} pomodoro.
         </p>
-        <a className="btn" onClick={this.props.onPomodoroStart}>Start</a>
-        <a className="btn" onClick={this.props.onPomodoroStop}>Stop</a>
+        <button className="btn" disabled={this.props.started} onClick={this.props.onPomodoroStart}>Start</button>
+        <button className="btn" disabled={!this.props.started} onClick={this.props.onPomodoroStop}>Stop</button>
       </div>
     );
   }

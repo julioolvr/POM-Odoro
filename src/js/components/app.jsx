@@ -53,14 +53,19 @@ export default class extends React.Component {
     }
   }
 
+  timeElapsed(seconds) {
+    return `${Math.floor(seconds / 60)}:${(seconds < 10 ? '0' : '') + seconds % 60}`;
+  }
+
   render() {
     return (
       <div className="timer-container">
         <Timer pomodoroLength={this.state.data.get('pomodoroLength')}
+               started={!!this.state.data.get('startedAt')}
                onPomodoroLengthChange={(e) => this.onPomodoroLengthChange(e)}
                onPomodoroStart={() => this.startTimer()}
                onPomodoroStop={() => this.stopTimer()}/>
-        Seconds elapsed: {this.state.data.get('secondsElapsed')}
+             Time elapsed: {this.timeElapsed(this.state.data.get('secondsElapsed'))}
       </div>
     );
   }
