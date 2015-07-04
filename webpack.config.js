@@ -1,3 +1,15 @@
+var cssLoader = {
+  test: /\.css$/
+};
+
+var staticFileLoader = 'file?name=[path][name].[ext]&context=src';
+
+if (process.env.BUILD) {
+  cssLoader.loader = staticFileLoader;
+} else {
+  cssLoader.loader = 'style-loader!css-loader';
+}
+
 module.exports = {
   entry: './src/js/index.jsx',
   output: {
@@ -9,12 +21,9 @@ module.exports = {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loaders: ['react-hot', 'babel']
-    }, {
-      test: /\.css$/,
-      loader: process.env.BUILD ? 'css-loader' : 'style-loader!css-loader'
-    }, {
-      test: /\.html$/,
-      loader: 'file?name=[path][name].[ext]&context=src'
+    }, cssLoader, {
+      test: /\.wav$/,
+      loader: staticFileLoader
     }]
   },
   devtool: '#inline-source-map'

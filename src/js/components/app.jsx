@@ -3,8 +3,8 @@ import Immutable from 'immutable';
 
 import Timer from './timer.jsx';
 
-import startSoundPath from 'file!../../sounds/tick-tock.wav';
-import endSoundPath from 'file!../../sounds/bell.wav';
+import startSoundPath from '../../sounds/tick-tock.wav';
+import endSoundPath from '../../sounds/bell.wav';
 
 const startSound = new Audio(startSoundPath);
 const endSound = new Audio(endSoundPath);

@@ -24,7 +24,7 @@
     "test": "npm run lint",
     "lint": "eslint src/js --ext .js --ext .jsx",
     "clean": "rm -rf build/",
-    "copy": "cp -r src/css build/ && cp -r src/index.html build/",
+    "copy": "cp -r src/index.html build/",
     "prebuild": "npm run clean && mkdir build && npm run copy",
     "build": "BUILD=true webpack"
   },
