@@ -3,21 +3,19 @@
 import React from 'react';
 
 class Timer extends React.Component {
-  componentDidMount() {
-    if (this.props.focusOnRender) {
-      React.findDOMNode(this.refs.lengthInput).focus();
-    }
-  }
-
   onPomodoroLengthChange(event) {
-    this.props.onPomodoroLengthChange(Number(event.target.textContent));
+    const newValue = event.target.value;
+
+    if (newValue.match(/\d*/)) {
+      this.props.onPomodoroLengthChange(event.target.value);
+    }
   }
 
   render() {
     return (
       <div>
         <p>
-          Start a <span ref="lengthInput" contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes
+          Start a <input maxLength="2" autoFocus ref="lengthInput" onInput={(e) => this.onPomodoroLengthChange(e)} value={this.props.pomodoroLength}></input> minutes
           pomodoro.
         </p>
         <a className="btn" onClick={this.props.onPomodoroStart}>Start</a>

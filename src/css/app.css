@@ -54,3 +54,23 @@ body {
 .btn:hover {
   background-color: #967872;
 }
+
+/* Input styles from http://callmenick.com/post/various-css-input-text-styles */
+input {
+  font-size: 80px;
+  padding: 10px;
+  border: none;
+  color: #FEFEFE;
+  text-shadow: 0 1px 1px #394240;
+  font-family: 'Open Sans', sans-serif;
+  width: 1.5em;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: solid 2px #969696;
+}
