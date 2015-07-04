@@ -11,11 +11,11 @@ module.exports = {
       loaders: ['react-hot', 'babel']
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: process.env.BUILD ? 'css-loader' : 'style-loader!css-loader'
     }, {
       test: /\.html$/,
       loader: 'file?name=[path][name].[ext]&context=src'
     }]
   },
-  devtool: "#inline-source-map"
+  devtool: '#inline-source-map'
 };

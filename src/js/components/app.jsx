@@ -3,8 +3,11 @@ import Immutable from 'immutable';
 
 import Timer from './timer.jsx';
 
-const startSound = new Audio('/sounds/tick-tock.wav');
-const endSound = new Audio('/sounds/bell.wav');
+import startSoundPath from 'file!../../sounds/tick-tock.wav';
+import endSoundPath from 'file!../../sounds/bell.wav';
+
+const startSound = new Audio(startSoundPath);
+const endSound = new Audio(endSoundPath);
 
 export default class extends React.Component {
   constructor(props) {
