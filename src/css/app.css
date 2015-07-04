@@ -1,5 +1,10 @@
 /* http://coolors.co/app/db4a59-db3243-17bebb-2e282a-edb88b first two so far */
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   height: 100%;
 }
@@ -7,8 +12,11 @@ html {
 body {
   height: 100%;
   display: flex;
+  display: -webkit-flex;
   align-items: center;
+  -webkit-align-items: center;
   justify-content: center;
+  -webkit-justify-content: center;
 
   background-color: #E7453F;
 }
