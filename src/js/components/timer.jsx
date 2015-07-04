@@ -12,10 +12,11 @@ export default class extends React.Component {
     return (
       <div>
         <p>
-          Start a <span contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes pomodoro.
+          Start a <span contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes
+          pomodoro.
         </p>
-        <button onClick={this.props.onPomodoroStart}>Start</button>
-        <button onClick={this.props.onPomodoroStop}>Stop</button>
+        <a className="btn" onClick={this.props.onPomodoroStart}>Start</a>
+        <a className="btn" onClick={this.props.onPomodoroStop}>Stop</a>
       </div>
     );
   }

@@ -52,7 +52,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="timer-container">
         <Timer pomodoroLength={this.state.data.get('pomodoroLength')}
                onPomodoroLengthChange={(e) => this.onPomodoroLengthChange(e)}
                onPomodoroStart={() => this.startTimer()}

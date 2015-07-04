@@ -1,14 +1,56 @@
 /* http://coolors.co/app/db4a59-db3243-17bebb-2e282a-edb88b first two so far */
 
-body {
-  background-color: #DB4A59;
+html {
+  height: 100%;
 }
 
-.tomato {
-  background-color: #db3243;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  margin: 0 auto;
-  box-sizing: border-box;
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #E7453F;
+}
+
+.timer-container {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 80px;
+  color: #FEFEFE;
+  text-shadow: 0 1px 1px #394240;
+}
+
+.timer-container p {
+  margin: 0;
+}
+
+.timer-container [contenteditable] {
+  outline: none;
+}
+
+/* Button styles from http://codepen.io/benague/pen/bCkyr */
+
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  background-color: #6D544F;
+  box-shadow: 0px 5px 0px 0px #453532;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px #000;
+}
+
+.btn:hover {
+  background-color: #967872;
 }
