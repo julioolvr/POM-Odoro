@@ -3,7 +3,13 @@
 import React from 'react';
 import Immutable from 'immutable';
 
-export default class extends React.Component {
+class Timer extends React.Component {
+  componentDidMount() {
+    if (this.props.focusOnRender) {
+      React.findDOMNode(this.refs.lengthInput).focus();
+    }
+  }
+
   onPomodoroLengthChange(event) {
     this.props.onPomodoroLengthChange(Number(event.target.textContent));
   }
@@ -12,7 +18,7 @@ export default class extends React.Component {
     return (
       <div>
         <p>
-          Start a <span contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes
+          Start a <span ref="lengthInput" contentEditable onInput={(e) => this.onPomodoroLengthChange(e)}>{this.props.pomodoroLength}</span> minutes
           pomodoro.
         </p>
         <a className="btn" onClick={this.props.onPomodoroStart}>Start</a>
@@ -20,4 +26,8 @@ export default class extends React.Component {
       </div>
     );
   }
-};
+}
+
+Timer.defaultProps = { focusOnRender: true };
+
+export default Timer;
