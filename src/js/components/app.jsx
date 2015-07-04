@@ -3,6 +3,9 @@ import Immutable from 'immutable';
 
 import Timer from './timer.jsx';
 
+const startSound = new Audio('/sounds/tick-tock.wav');
+const endSound = new Audio('/sounds/bell.wav');
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +21,7 @@ export default class extends React.Component {
   }
 
   startTimer() {
+    startSound.play();
     this.setState(prev => ({
       data: prev.data.merge({
         timer: setInterval(() => this.tick(), 50),
@@ -27,6 +31,7 @@ export default class extends React.Component {
   }
 
   stopTimer() {
+    endSound.play();
     clearInterval(this.state.data.get('timer'));
     this.setState(prev => ({
       data: prev.data
