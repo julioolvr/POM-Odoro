@@ -7,6 +7,8 @@
     "babel-core": "^5.5.8",
     "babel-loader": "^5.1.4",
     "css-loader": "^0.15.1",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.6.4",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "immutable": "^3.6.2",
@@ -19,10 +21,11 @@
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --content-base src/",
+    "test": "npm run lint",
+    "lint": "eslint src/js --ext .js --ext .jsx",
     "clean": "rm -rf build/",
     "prebuild": "npm run clean",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "author": "Julio Olivera",
   "license": "ISC"

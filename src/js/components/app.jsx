@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import Immutable from 'immutable';
 
@@ -10,7 +8,7 @@ export default class extends React.Component {
     super(props);
     this.state = {
       data: Immutable.Map({ pomodoroLength: 25, secondsElapsed: 0 })
-    }
+    };
   }
 
   onPomodoroLengthChange(newLength) {
@@ -61,4 +59,4 @@ export default class extends React.Component {
       </div>
     );
   }
-};
+}

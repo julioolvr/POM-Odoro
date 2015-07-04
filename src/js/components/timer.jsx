@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import Immutable from 'immutable';
 
 class Timer extends React.Component {
   componentDidMount() {
