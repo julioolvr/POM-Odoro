@@ -5,6 +5,7 @@ import Timer from './timer.jsx';
 
 import startSoundPath from '../../sounds/tick-tock.wav';
 import endSoundPath from '../../sounds/bell.wav';
+import tomatoIconPath from '../../img/tomato.png';
 
 const startSound = new Audio(startSoundPath);
 const endSound = new Audio(endSoundPath);
@@ -15,6 +16,10 @@ export default class extends React.Component {
     this.state = {
       data: Immutable.Map({ pomodoroLength: 25, secondsElapsed: 0 })
     };
+  }
+
+  componentDidMount() {
+    Notification.requestPermission();
   }
 
   onPomodoroLengthChange(newLength) {
@@ -34,6 +39,14 @@ export default class extends React.Component {
   }
 
   stopTimer() {
+    new Notification('POM Odoro', { // eslint-disable-line no-new
+      body: 'Pomodoro finished!',
+      icon: tomatoIconPath
+    });
+    this.cancelTimer();
+  }
+
+  cancelTimer() {
     endSound.play();
     clearInterval(this.state.data.get('timer'));
     this.setState(prev => ({
@@ -67,7 +80,7 @@ export default class extends React.Component {
                started={!!this.state.data.get('startedAt')}
                onPomodoroLengthChange={(e) => this.onPomodoroLengthChange(e)}
                onPomodoroStart={() => this.startTimer()}
-               onPomodoroStop={() => this.stopTimer()}/>
+               onPomodoroStop={() => this.cancelTimer()}/>
              Time elapsed: {this.timeElapsed(this.state.data.get('secondsElapsed'))}
       </div>
     );

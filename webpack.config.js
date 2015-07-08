@@ -22,7 +22,7 @@ module.exports = {
       exclude: /node_modules/,
       loaders: ['react-hot', 'babel']
     }, cssLoader, {
-      test: /\.wav$/,
+      test: /\.(wav|png)$/,
       loader: staticFileLoader
     }]
   },
