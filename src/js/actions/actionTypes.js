@@ -1,0 +1,4 @@
+export const START_POMODORO = 'START_POMODORO';
+export const STOP_POMODORO = 'STOP_POMODORO';
+export const NEW_POMODORO_LENGTH = 'NEW_POMODORO_LENGTH';
+export const TICK = 'TICK';
