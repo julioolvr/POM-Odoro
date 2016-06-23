@@ -56,7 +56,7 @@ export default class extends React.Component {
                Time elapsed: {this.timeElapsed(this.props.time.get('secondsElapsed'))}
         </div>
         <p className="disclaimer">
-          Small <a href="http://facebook.github.io/react/" target="_blank">React.js</a> experiment by <a href="https://twitter.com/_joliv" target="_blank">@_joliv</a>. <a href="https://github.com/julioolvr/pom-odoro" target="_blank">Fork me on Github.</a>
+          Small <a href="http://facebook.github.io/react/" target="_blank">React.js</a> experiment by <a href="https://twitter.com/julioolvr" target="_blank">@julioolvr</a>. <a href="https://github.com/julioolvr/pom-odoro" target="_blank">Fork me on Github.</a>
         </p>
       </div>
     );
